@@ -1,0 +1,20 @@
+x = int(input("Enter an even number greater than 3: "))
+if x % 2 != 0 and x < 3:
+    print("Enter a valid number: ")
+    
+list = []
+
+for i in range(2, 10000):
+    for j in range(2, i):
+        if i % j == 0:
+            break
+    else:
+        list.append(i)
+
+for item in list:
+    if x > item:
+        if x - item in list:
+            print(item, "+", x - item, "=", x)
+            list.remove(item)
+            list.remove(x-item)
+        
